@@ -1,0 +1,205 @@
+/* Style général */
+html, body {
+    height: 100%; /* Assure que le corps occupe toute la hauteur de la page */
+}
+
+body {
+    display: flex;
+    flex-direction: column; /* Disposition verticale des éléments */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Styles du logo et de l'en-tête */
+.logo img {
+    width: 150px; /* Ajuste la taille à ce qui te convient */
+    height: auto;
+}
+
+header {
+    background-color: #0044cc; /* Couleur de fond bleu */
+    color: #fff; /* Couleur du texte en blanc */
+    padding: 10px 0; /* Espace en haut et en bas */
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between; /* Espace entre le logo et la navigation */
+    align-items: center; /* Aligne verticalement les éléments */
+}
+
+/* Styles pour les membres de l'équipe */
+.team-member {
+    display: flex; /* Utilise flexbox pour aligner l'image et le texte */
+    align-items: center; /* Centre verticalement le contenu */
+    margin-bottom: 20px; /* Espace entre les membres de l'équipe */
+    padding: 15px;
+    border-bottom: 1px solid #ddd; /* Ligne de séparation */
+}
+
+.team-member img {
+    width: 400px; /* Largeur de l'image agrandie */
+    height: 400px; /* Hauteur de l'image pour maintenir la forme ovale */
+    border-radius: 50%; /* Rendre l'image ovale */
+    margin-right: 20px; /* Espacement entre l'image et le texte */
+}
+
+.team-member .julien-mercier {
+    width: 150px; /* Largeur spécifique pour Julien Mercier */
+    height: 150px; /* Hauteur spécifique pour garder la forme ovale */
+    border-radius: 50%; /* Rendre l'image ovale */
+    margin-right: 20px; /* Espacement entre l'image et le texte */
+}
+
+.member-info h3 {
+    color: #0044cc; /* Couleur du titre */
+    margin: 0 0 5px; /* Marges pour le titre */
+}
+
+.member-info p {
+    margin: 0; /* Pas de marges pour le paragraphe */
+    color: #333; /* Couleur du texte */
+}
+
+/* Réinitialiser la marge par défaut des paragraphes dans team-member */
+.team-member p {
+    margin: 0; /* Réinitialise la marge par défaut pour éviter les espaces indésirables */
+}
+
+/* Style spécifique pour le paragraphe avec la classe team-style */
+.team-member .team-style {
+    margin-left: 15px; /* Retrait de 15 pixels en début de paragraphe */
+    text-align: justify; /* Texte justifié */
+    margin-top: 10px; /* Ajoute un espace au-dessus de ce paragraphe */
+    margin-bottom: 10px; /* Ajoute de l’espace entre les descriptions */
+}
+
+
+/* Styles du menu de navigation */
+header nav ul {
+    display: flex; /* S'assure que les éléments de la liste sont alignés horizontalement */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+header nav ul li {
+    margin: 0 20px; /* Ajuste l'espacement entre les liens */
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 120%;
+    font-weight: bold;
+}
+
+/* Styles de la section principale */
+main {
+    flex: 1; /* Permet à la section principale de prendre l'espace restant */
+}
+
+.hero {
+    background-image: url(images/facade.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 500px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    padding: 10px;
+    text-shadow: 2px 2px 8px #004080;
+}
+
+/* Section À propos et services */
+.about, .services {
+    padding: 40px 0;
+}
+
+.about h2, .services h2 {
+    color: #0044cc;
+    margin-bottom: 20px;
+}
+
+/* Section services */
+.service-item {
+    background: #fff;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.service-item h3 {
+    color: #333;
+}
+/* Formulaire de contact */
+.form-group {
+    display: flex; /* Utiliser flexbox pour aligner les éléments sur la même ligne */
+    margin-bottom: 15px; /* Espace entre les lignes du formulaire */
+}
+
+.form-group label {
+    width: 100px; /* Largeur fixe pour les étiquettes */
+    margin-right: 10px; /* Espace entre l'étiquette et le champ */
+}
+
+#name {
+    width: 100%; /* 50% plus large que le champ de l'email */
+}
+
+#email {
+    width: 100%; /* 100% de largeur */
+}
+
+#message {
+    width: 100%; /* 100% de largeur pour le champ message */
+    height: 250px; /* Ajuste la hauteur pour plus d'espace */
+}
+
+button {
+    margin-top: 10px; /* Espace au-dessus du bouton */
+}
+
+/* Pied de page */
+.footer-style {
+    background-color: #0044cc;
+    color: #fff;
+    padding: 10px 0;
+    text-align: right;
+    margin-top: auto; /* Pousse le footer vers le bas */
+}
+
+footer a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    header nav ul {
+        flex-direction: column; /* Aligne les éléments verticalement sur petits écrans */
+    }
+
+    header nav ul li {
+        margin: 10px 0; /* Espace entre les éléments */
+    }
+
+    .hero h1 {
+        font-size: 2.5rem; /* Réduit la taille du texte sur petits écrans */
+    }
+}

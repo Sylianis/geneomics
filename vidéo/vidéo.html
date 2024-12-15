@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Player</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 20px;
+    }
+    h1 {
+      color: #333;
+    }
+    .video-titles {
+      margin-top: 20px;
+    }
+    .video-titles h2 {
+      cursor: pointer;
+      color: #007BFF;
+      text-decoration: underline;
+    }
+    .video-titles h2:hover {
+      color: #0056b3;
+    }
+    video {
+      width: 80%;
+      max-width: 100%; /* Ne dépasse pas la largeur de l'écran */
+      height: auto; /* Conserve les proportions */
+      margin-top: 20px;
+      display: none; /* Masque le lecteur par défaut */
+    }
+    /* Media query pour les petits écrans */
+    @media (max-width: 600px) {
+      body {
+        margin: 10px;
+      }
+      h1 {
+        font-size: 1.5rem;
+      }
+      .video-titles h2 {
+        font-size: 1rem;
+      }
+      video {
+        width: 100%; /* Utilise toute la largeur sur les petits écrans */
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Video Player</h1>
+  <p>Click on a title to play the corresponding video:</p>
+
+  <div class="video-titles">
+    <h2 onclick="playVideo('security_cam.mp4')">Security Camera Footage</h2>
+    <h2 onclick="playVideo('Backrooms_First Contact.mp4')">First Contact</h2>
+    <h2 onclick="playVideo('Prototype.mp4')">Prototype</h2>
+    <!-- Add more titles here as needed -->
+  </div>
+
+  <video id="videoPlayer" controls>
+    <source src="" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <script>
+    function playVideo(videoPath) {
+      const videoPlayer = document.getElementById('videoPlayer');
+      videoPlayer.src = videoPath; // Met à jour la source de la vidéo
+      videoPlayer.style.display = 'block'; // Affiche le lecteur
+      videoPlayer.play(); // Lance la lecture
+    }
+  </script>
+</body>
+</html>
