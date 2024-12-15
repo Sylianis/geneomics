@@ -53,9 +53,9 @@
   <p>Click on a title to play the corresponding video:</p>
 
   <div class="video-titles">
-    <h2 onclick="playVideo('security_cam.mp4')">Security Camera Footage</h2>
-    <h2 onclick="playVideo('Backrooms_First Contact.mp4')">First Contact</h2>
-    <h2 onclick="playVideo('Prototype.mp4')">Prototype</h2>
+    <h2 onclick="playVideo('security_cam')">Security Camera Footage</h2>
+    <h2 onclick="playVideo('Backrooms_First_Contact')">First Contact</h2>
+    <h2 onclick="playVideo('Prototype.')">Prototype</h2>
     <!-- Add more titles here as needed -->
   </div>
 
@@ -65,12 +65,20 @@
   </video>
 
   <script>
-    function playVideo(videoPath) {
-      const videoPlayer = document.getElementById('videoPlayer');
-      videoPlayer.src = videoPath; // Met à jour la source de la vidéo
-      videoPlayer.style.display = 'block'; // Affiche le lecteur
-      videoPlayer.play(); // Lance la lecture
-    }
+   function playVideo(videoPath) {
+  const videoPlayer = document.getElementById('videoPlayer');
+
+  // Efface les anciennes sources pour en ajouter de nouvelles
+  videoPlayer.innerHTML = `
+    <source src="${videoPath}.mp4" type="video/mp4">
+    <source src="${videoPath}.webm" type="video/webm">
+  `;
+
+  videoPlayer.style.display = 'block'; // Affiche le lecteur
+  videoPlayer.load(); // Recharge la liste des sources
+  videoPlayer.play(); // Lance la lecture
+}
+
   </script>
 </body>
 </html>
