@@ -1,0 +1,18 @@
+Résumé des commandes
+Vérifiez les changements :
+bash
+Copier le code
+git status
+Ajoutez les fichiers :
+bash
+Copier le code
+git add .
+Faites un commit :
+bash
+Copier le code
+git commit -m "Description des modifications"
+Poussez vers GitHub :
+bash
+Copier le code
+git push origin main
+Une fois cela fait, vos modifications seront en ligne. Si vous avez besoin d'aide supplémentaire, faites-le-moi savoir ! 😊
